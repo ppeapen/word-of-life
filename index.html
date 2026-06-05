@@ -610,17 +610,18 @@
 	  margin-top: 0.5em;
 	  margin-bottom: 1em;
 	}
-	ul.a {
+	ul.a, ul.a li {
 	  list-style-type: square;
 	  padding-left: 8%;
 	  margin-top: 0em;
 	  margin-bottom: 0.5em;
 	}
-	ul.aa {
+	ul.aa, ul.aa li {
 	  list-style-type: circle;
 	  font-size: 0.9em;
+	  padding-left: 10%;
 	  margin-top: 0em;
-	  margin-bottom: 0.5em;
+	  margin-bottom: 0.3em;
 	}
 	ol {
 	  font-family: 'Lato', 'Noto Sans', sans-serif;
@@ -675,8 +676,59 @@
 	  line-height: 1.2rem;
 	  padding: 0.5rem;
 	}
+	/*=====================*/
+	/* Main Book Cover Layout Container */
+    .book-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; /* Centers items if there is leftover space */
+      gap: 40px;               /* Sets a clean 40px gap both vertically and horizontally */
+      padding: 20px;
+      max-width: 700px;        /* Limits total width to fit exactly two 300px books + 40px gap */
+      margin: 0 auto;          /* Centers the entire gallery on huge screens */
+    }
+    /* Individual Book Item Structure */
+    .book-item {
+      display: flex;
+      flex-direction: column;  /* Stacks image, text, and link vertically */
+      align-items: center;     /* Centers content inside the book card */
+      text-align: center;
+      /* Calculates width for 2 columns: (100% total width - 40px gap) / 2 */
+      width: calc((100% - 40px) / 2); 
+      box-sizing: border-box;
+    }
+    /* Cover Image Rules */
+    .book-cover {
+      width: 300px;            /* Locked width as requested */
+      height: auto;            /* Maintains aspect ratio */
+      display: block;
+      margin-bottom: 12px;     /* Space between image and text */
+    }    
+    /* Button/Link Styling */
+    .read-link {
+      display: inline-block;
+      margin-top: auto;        /* Pushes link to the bottom if text heights vary */
+      padding: 8px 16px;
+      background-color: #0076d6;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .read-link:hover {
+      background-color: #00569d;
+    }
+    /* Responsive rule for screens under 700px wide */
+    @media (max-width: 699px) {
+      .book-item {
+        width: 100%;           /* Forces books to take full width (1 book per row) */
+      }
+      .book-cover {
+        max-width: 100%;       /* Prevents images from overflowing tiny smartphone screens */
+      }
+    }	
 
-	/*Screens wider than 1640px:*/
+	/*#########3Screens wider than 1640px:######*/
 	@media screen and (min-width: 1640px) {
 	  body {
 		margin-left: 33%;
@@ -860,7 +912,7 @@
 		left: -300px;
 		width: 290px;
 		height: 120%;
-		background-color: rgba(99, 0, 49, 0.897); /*20% transparency*/
+		background-color: rgba(4,  8, 54, 0.897); /*20% transparency*/
 		transition: 0.3s;
 		padding: 20px 10px;
 		box-sizing: border-box;
@@ -978,10 +1030,14 @@
       <nav id="sidebar-menu">
           <h4>Menu</h4>
           <ul>
-			<li><a href="./books/article_lords_prayer_prelude.html">കർത്തൃപ്രാർത്ഥനയ്‍ക്ക് ഒരു ആമുഖം</a></li>
-			<li><a href="#author">About the author</a></li>
-			<li><a href="#author-mal">ലേഖകനെ കുറിച്ച് …</a></li>
-			<li><a href="#contents">Contents</a></li>
+            <li><a href="#contents">Contents</a>
+            <ul class="aa">
+              <li><a href="#books">Books</a>
+              <li><a href="#articles">Articles</a>
+            </ul>
+            </li>
+			      <li><a href="#author">About the author</a></li>
+			      <li><a href="#author-mal">ലേഖകനെ കുറിച്ച് …</a></li>			
           </ul>
       </nav>
       </label>
@@ -1014,34 +1070,63 @@
     
     
     <div id="toc" class="content-list">
-      <h3>Books</h3>
-      <p class="hangingindent  lato">   		
-	      1. The Great Rescue<br />
-	      <a href="./books/eBook_theGreatRescue.pdf" target="_blank">READ online (PDF 275kb)</a>
-	    </p>
-      <p class="hangingindent  manjari">
-	      2. പാപം എന്ന കുറ്റം  <br />
-	          <span class="lato">(The Guilt of Sin - Malayalam)</span><br />
-	      <span class="lato"><a href="./books/eBook-guilt-of-sin.pdf" target="_blank">READ online (PDF 1.2Mb)</a></span>
-	    </p>
-      <p class="hangingindent  lato">   		
-	      3. The Lord’s Supper: Distortions in the Ordinance <br />
-	      <!--<a href="https://www.amazon.com/dp/B0D7TGC47Q/ref=sr_1_1" target="_blank"><small>BUY the eBook</small></a> 
-	      &nbsp;&nbsp;|&nbsp;&nbsp;-->
-	      <a href="./books/eBook_theLordsSupper.pdf" target="_blank">READ online (PDF 493kb)</a>
-	    </p>
-	    <p class="hangingindent  manjari">
-	      4. ക്രിസ്‍തുവിന്റെ ശരീരരക്തത്തിന്റെ കൂട്ടായ്‍മ  <br />
-	          <span class="lato">(The Communion Of The Body and Blood of Christ - Malayalam)</span><br />
-	      <span class="lato"><a href="./books/eBook_kristhuvinteShareeraRaktam.pdf" target="_blank">READ online (PDF 594Kb)</a></span>
-	    </p>
-	    
-      <h3>Articles</h3>
-	      <p class="hangingindent  manjari">   		
-	        1. കർത്തൃപ്രാർത്ഥനയ്‍ക്ക് ഒരു ആമുഖം <br />
-	          <span class="lato">(A Prelude to the Lord’s Prayer - Malayalam)</span><br />
-	        <span class="lato"><a href="./books/article_lords_prayer_prelude.html">READ online</a></span>
-	      </p>
+      <div class="book-container">
+          <!-- Book 1 -->
+          <div class="book-item">
+            <a href="./books/eBook_theGreatRescue.pdf">
+              <img src="./assets/img/cover_eBook-theGreatRescue.webp" alt="The Great Rescue Cover" class="book-cover">
+            </a>
+            <!--<div class="book-title lato">1. The Great Rescue</div>-->
+            <a href="./books/eBook_theGreatRescue.pdf" class="read-link lato">READ online (PDF 275kb)</a>
+          </div>
+
+          <!-- Book 2 -->
+          <div class="book-item">
+            <a href="./books/eBook-guilt-of-sin.pdf" title="The Guilt of Sin - Malayalam">
+              <img src="./assets/img/cover_eBook-guilt-of-sin.webp" alt="The Guilt of Sin Cover" class="book-cover">
+            </a>
+            <!--<div class="book-title manjari">2. പാപം എന്ന കുറ്റം <br />
+              <span class="lato" style="font-size: 14px; color: #555;">(The Guilt of Sin - Malayalam)</span>
+            </div>-->
+            <a href="./books/eBook-guilt-of-sin.pdf" class="read-link lato">READ online (PDF 1.2Mb)</a>
+          </div>
+
+          <!-- Book 3 -->
+          <div class="book-item">
+            <a href="./books/eBook_theLordsSupper.pdf" >
+              <img src="./assets/img/cover_eBook_theLordsSupper.webp" alt="The Lord’s Supper Cover" class="book-cover">
+            </a>
+            <!--<div class="book-title lato">3. The Lord’s Supper: Distortions in the Ordinance</div>-->
+            <a href="./books/eBook_theLordsSupper.pdf" class="read-link lato">READ online (PDF 493kb)</a>
+          </div>
+
+          <!-- Book 4 -->
+          <div class="book-item">
+            <a href="./books/eBook_kristhuvinteShareeraRaktam.pdf"  title="The Communion Of The Body and Blood of Christ - Malayalam">
+              <img src="./assets/img/cover_eBook_kristhuvinteShareeraRaktam.webp" alt="The Communion Of The Body and Blood of Christ Cover" class="book-cover">
+            </a>
+            <!--<div class="book-title manjari">
+              4. ക്രിസ്‍തുവിന്റെ ശരീരരക്തത്തിന്റെ കൂട്ടായ്‍മ <br />
+              <span class="lato" style="font-size: 14px; color: #555;">(The Communion Of The Body and Blood of Christ - Malayalam)</span>
+            </div>-->
+            <a href="./books/eBook_kristhuvinteShareeraRaktam.pdf" class="read-link lato">READ online (PDF 594Kb)</a>
+          </div>
+      </div>
+    
+      <h3 id="articles">Articles</h3>
+      <div class="content-list">
+      <div class="book-container">
+          <!-- Article 1 -->
+          <div class="book-item">
+            <a href="./books/article_lords_prayer_prelude.html" title="A Prelude to the Lord’s Prayer - Malayalam">
+              <img src="./assets/img/cover_article_lords_prayer_prelude.webp" alt="The Great Rescue Cover" class="book-cover">
+            </a>
+            <!--<div class="book-title manjari">
+            1. കർത്തൃപ്രാർത്ഥനയ്‍ക്ക് ഒരു ആമുഖം <br />
+	          <span class="lato">(A Prelude to the Lord’s Prayer - Malayalam)</span><br />-->
+            <a href="./books/article_lords_prayer_prelude.html" class="read-link lato">READ online (PDF 275kb)</a>
+          </div>
+      </div>
 
     </div>
 	    <!--<p class="notes noindent" style="margin-top:2rem;"><a href="#instructions">How to read Kindle eBook? …</a></p>-->
