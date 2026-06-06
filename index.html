@@ -127,45 +127,24 @@
 	  display: block;
 	  border-style: none;
 	}
-	
 	/*LINK FORMATTING*/
 	/*###############*/
 	a:link {
 	  color: #1624e7;
-	  background-color: transparent;
 	  text-decoration: none;
 	}
 	a:visited {
-	  color: #c00ba2;
-	  background-color: transparent;
+	  color: black;
 	  text-decoration: none;
 	}
 	a:hover {
 	  color: #e3313d;
-	  background-color: transparent;
 	  text-decoration: none;
 	}
 	a:active {
 	  color: #ff0000;
-	  background-color: transparent;
-	  text-decoration: underline;
-	}
-	.menu-link:link {
-	  color: #434444;
-	  background-color: transparent;
 	  text-decoration: none;
 	}
-	.menu-link:visited {
-	  color: #434444;
-	  background-color: transparent;
-	  text-decoration: none;
-	}
-	.menu-link:hover {
-	  color: #e3313d;
-	  background-color: transparent;
-	  text-decoration: none;
-	}
-
 
 	/*To Display Verses and Notes inline on touch/click*/
 	/*<span class="more_info" title="tool tip">underline</span>*/
@@ -220,10 +199,19 @@
 	  }
 	  body a:link {
 		color: #1624e7;
-	  }
+	  }	  
 	  body a:visited {
-		color: #c00ba2;
+		/*color: #F53527;*/
 	  }
+	  body a:hover {
+	  color: #e3313d;
+	  color: red;
+	  text-decoration: none;
+	}
+		body a:active {
+	  color: #ff0000;
+	  text-decoration: none;
+	}
 	  body .colorfont2 {
 		color:rgb(11, 9, 179);
 	  }
@@ -232,6 +220,31 @@
 		background-color: rgb(254, 255, 209);
 	  }
 	}
+	/* Button/Link Styling */
+    .read-link {
+      display: inline-block;
+      margin-top: auto;        /* Pushes link to the bottom if text heights vary */
+      padding: 8px 16px;
+      background-color: #E6D6BA;
+      color: black;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: bold;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    body .read-link a:active {
+    text-decoration: none;
+    }
+    .read-link:hover {
+      transform: scale(0.99); 
+      /*box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);*/
+      box-shadow:
+        0 1px 1px rgba(0,0,0,0.11), 
+        0 2px 2px rgba(0,0,0,0.11), 
+        0 4px 4px rgba(0,0,0,0.11), 
+        0 8px 8px rgba(0,0,0,0.11), 
+        0 16px 16px rgba(0,0,0,0.11);
+      }
 	/*---------------*/
 	hr {
 	  width: 30%;
@@ -704,22 +717,7 @@
       display: block;
       margin-bottom: 12px;     /* Space between image and text */
     }    
-    /* Button/Link Styling */
-    .read-link {
-      display: inline-block;
-      margin-top: auto;        /* Pushes link to the bottom if text heights vary */
-      padding: 8px 16px;
-      background-color: #0076d6;
-      color: black;
-      text-decoration: none;
-      border-radius: 4px;
-      font-weight: bold;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .read-link:hover {
-      transform: scale(0.99); 
-      text-shadow: 1px 1px 1px rgba(70, 70, 70, 0.3	);
-    }
+    
     /* Responsive rule for screens under 700px wide */
     @media (max-width: 699px) {
       .book-item {
@@ -986,7 +984,7 @@
 	body {background: rgb(214, 214, 214); color:rgb(23, 23, 23)}
 	body.div {background: rgb(214, 214, 214);color:rgb(23, 23, 23)}
 	body a:link {color: #1624e7;}
-	body a:visited {color: #c00ba2;}
+	body a:visited {color: #9c056c;}
 	body .colorfont2 {color:rgb(11, 9, 179);}
 	body .highlight {color: rgb(114, 5, 5);background-color: rgb(254, 255, 209);}
 	body .redletter {color: #d40000ff; text-shadow: 0px 0px 0px rgb(0, 0, 0);}
@@ -1009,13 +1007,14 @@
 	body.dark-theme table td,
 	body.dark-theme table th {color:rgb(196, 196, 196);}
 	body.dark-theme a:link {color: #f5610b;}
-	body.dark-theme a:visited {color: #f50b78;}
+	body.dark-theme a:visited {color: #F53527;}
 	body.dark-theme .colorfont2 {color:rgb(31, 109, 177);}
 	body.dark-theme .highlight {color: rgb(254, 255, 209); background-color: rgba(114, 5, 5, 0.711);}
 	body.dark-theme button {color: rgb(254, 255, 209); background-color: rgba(114, 5, 5, 0.711);}
 	body.dark-theme .box {background-color: rgb(15, 27, 13); color: rgb(214, 214, 214)}
 	body.dark-theme .redletter {/*background-color: rgba(114, 5, 5, 0.711);*/color:rgb(247, 237, 96);text-shadow: 2px 3px 3px rgb(0, 0, 0);}
 	body.dark-theme .pullquote {color:rgb(161, 161, 161); text-shadow: 2px 2px 2px rgb(0, 0, 0);}
+	body.dark-theme .read-link {background-color: #D9C6A7;}
 
 	</style>
 	
@@ -1137,14 +1136,14 @@
     
 	<a id="author"></a>
 	<h4>About the Author</h4>
-    <p></p>
+	<p>Alex M. Kuruvilla, born on June 7, 1949, pursued a successful career in the insurance industry before dedicating himself to the study and teaching of God's Word. Following his conversion and baptism in January 1986, he developed a deep passion for understanding the Scriptures and has devoted much of his life to exploring their truths.</p>
+  <p>By God's grace and mercy, he believes he has been granted insight into the mysteries of the Kingdom of God, enabling him to share biblical truths with clarity and conviction. Over the years, he has served as a Bible teacher and has authored numerous books and articles in both Malayalam and English, contributing to the spiritual growth and understanding of readers across diverse backgrounds.</p>
+    
 
 	<a id="author-mal"></a>
     <h4 class="manjari" style="margin-top: 3rem;">ലേഖകനെ കുറിച്ച് …</h4>
-    <p class="manjari"></p>
-		<p></p>
-
-
+		<p class="manjari">അലക്‍സ് എം. കുരുവിള (ജനനം: 7-6-1949) ഇൻഷുറൻസ് മേഖലയിൽ ദീൎഘകാലം സേവനം അനുഷ്ഠിച്ചു. 1986 ജനുവരിയിൽ മാനസാന്തരപ്പെട്ടു യേശുവിന്നായി ‍ ജീവിതം സമർപ്പിച്ചു. തുടർന്നു ജ്ഞാനസ്നാനം സ്വീകരിച്ചു. പിന്നീട് ദൈവവചന പഠനത്തിനും പഠിപ്പിക്കലിനും വേണ്ടി സ്വയം സമർപ്പിച്ചു.  തിരുവെഴുത്തുകൾ മനസ്സിലാക്കുന്നതിൽ അദ്ദേഹം ആഴമായ അഭിനിവേശം വളർത്തിയെടുത്തു. ജീവിതത്തിന്റെ ഭൂരിഭാഗവും അവയുടെ സത്യങ്ങൾ പര്യവേക്ഷണം ചെയ്യുന്നതിനായി നീക്കിവച്ചു.</p>
+    <p class="manjari">ദൈവത്തിന്റെ കൃപയാലും കാരുണ്യത്താലും, ദൈവരാജ്യത്തിന്റെ മൎമ്മങ്ങളെക്കുറിച്ച് തനിക്ക് ഉൾക്കാഴ്ച ലഭിച്ചിട്ടുണ്ടെന്നും, ബൈബിൾ സത്യങ്ങൾ വ്യക്തതയോടെയും ബോധ്യത്തോടെയും പങ്കിടാൻ അദ്ദേഹത്തിന് കഴിഞ്ഞിട്ടുണ്ടെന്നും അദ്ദേഹം വിശ്വസിക്കുന്നു. വർഷങ്ങളായി, അദ്ദേഹം ഒരു ബൈബിൾ അധ്യാപകനായി സേവനമനുഷ്‍ഠിച്ചിട്ടുണ്ട്. മലയാളത്തിലും ഇംഗ്ലീഷിലും നിരവധി പുസ്‍തകങ്ങളും ലേഖനങ്ങളും രചിച്ചിട്ടുണ്ട്. വ്യത്യസ്‍ത പശ്ചാത്തലങ്ങളിലുള്ള വായനക്കാരുടെ ആത്മീയ വളർച്ചയ്‍ക്ക് നിർണ്ണായക സംഭാവന നൽകിയിട്ടുണ്ട്.</p>
 
     <div id="instructions" style="display:none">
       <h4>FAQ</h4>
