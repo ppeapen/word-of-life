@@ -88,7 +88,10 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { 
+      scroll-behavior: smooth; 
+      scroll-padding-top: 65px; /*height of sticky header*/
+    }
     body {
       margin: 0;
       font-family: var(--font-sans);
@@ -455,11 +458,8 @@
           Scripture, the gospel of grace, and the Christian life — freely
           shared in English and Malayalam.
         </p>
-        <div class="meta-card" id="contact">
-          <strong>Musariath House (MRRA 28A)</strong><br/>
-          Janatha Lane Road, Vazhakkala, Kakkanad (West)<br/>
-          Kochi 682030, Kerala, India
-          <div class="actions" id="contact">
+        <div class="meta-card actions"   id="contact">         
+          <div>
             <a class="btn btn-primary" href="mailto:alexm.kuruvilla@gmail.com">✉ Email</a>
             <a class="btn" href="tel:+919633280848">📞 Call</a>
             <a class="btn" href="#publications">Browse library</a>
@@ -660,6 +660,7 @@
   <footer class="site">
     <div class="container">
       <p>© Alex M. Kuruvilla 2026 — All rights reserved.</p>
+       <p>Musariath House, Janatha Lane Road, Vazhakkala, Kochi 682030, Kerala, India</p>
       <p>Powered by <a href="https://philipeapen.com/gospel/">REFINERIA</a> · Last modified: June 11, 2026</p>
     </div>
   </footer>
