@@ -46,7 +46,9 @@ body {
 	  height: 45px;
 	  background-color: rgb(145, 0, 72);
 	  box-shadow: #575757;
-	  background: linear-gradient(rgb(211, 211, 211), rgb(245, 245, 245) 30%, rgb(160, 160, 160));
+	  /*background: linear-gradient(rgb(211, 211, 211), rgb(245, 245, 245) 30%, rgb(160, 160, 160));
+      box-shadow: 0 2 5px 0 #575757;*/
+    background: linear-gradient(rgba(10, 0, 109, 100), rgb(3, 11, 139) 30%, rgb(0, 15, 66));
       box-shadow: 0 2 5px 0 #575757;
 	  z-index: 8;
 	}
@@ -54,7 +56,7 @@ body {
 	.one-edge-shadow {
 	  -webkit-box-shadow: 0 8px 6px -6px rgb(58, 58, 58);
 	  -moz-box-shadow: 0 8px 6px -6px rgb(59, 59, 59);
-	  box-shadow: 0 8px 6px -6px rgb(58, 58, 58);
+	  box-shadow: 0 12px 6px -6px rgb(78, 78, 78);
 	}
 	.logo {
 	  width: 40px;
@@ -1020,3 +1022,7 @@ tr {
 	body.dark-theme .box {background-color: rgb(15, 27, 13); color: rgb(214, 214, 214)}
 	body.dark-theme .redletter {/*background-color: rgba(114, 5, 5, 0.711);*/color:rgb(247, 237, 96);text-shadow: 2px 3px 3px rgb(0, 0, 0);}
 	body.dark-theme .pullquote {color:rgb(161, 161, 161); text-shadow: 2px 2px 2px rgb(0, 0, 0);}
+	body.dark-theme .one-edge-shadow {
+	  -webkit-box-shadow: 0 8px 6px -6px rgb(58, 58, 58);
+	  -moz-box-shadow: 0 8px 6px -6px rgb(59, 59, 59);
+	  box-shadow: 0 12px 6px -6px rgb(0, 0, 0);
