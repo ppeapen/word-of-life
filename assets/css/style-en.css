@@ -884,7 +884,7 @@ tr {
 
 	/*TOGGLE-DARK MODE CSS*/
 	/*####################*/
-	.toggle {float: right;margin-top: 12px;margin-right: 80px;z-index: 15;}
+	.toggle {float: right;margin-top: 15px;margin-right: 15px;z-index: 15;}
 	/*Toggle checkbox is hidden*/
 	.toggle input[type=checkbox] {display: none;}
 	/*The label is morphed into switch bay */
