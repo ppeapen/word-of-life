@@ -115,7 +115,7 @@ Thomas" />
 				font-style: italic;
 				line-height: 1.2;
 			}
-			.publication-data p {
+			.publication-data, .publication-data p {
 				font-family: "Lato";
 				font-weight: 300;
 			}
@@ -794,7 +794,16 @@ Thomas" />
         Lord’s Servant K. T. Thomas: Serving in the Heartlands of
         Northern India</h1>
         <hr />
-        <p>Publication Data</p>
+        <div class="publication-data">
+        <p>
+        <p>The Lord’s Servant K. T. Thomas: Serving in the Heartlands of
+        Northern India<br /><br /> Translated by: Philip P. Eapen<br />
+        from:<br /> <i>Karthaavinte Dasan K. T. Thomas</i> [Malayalam]
+        <br /> Author: K. Y. Geevarghese<br /><br /></p>
+        <p>First English edition: 2026<br /> Published by: IPC Northern
+        Region, New Delhi<br /> All rights reserved<br /></p>
+        </p>
+        </div>
         <hr />
         <p>Backcover</p>
         <p>This brief biography tells the story of the Lord’s servant,
@@ -2136,7 +2145,7 @@ Thomas" />
         </tbody>
         </table>
         <!--
-        pandoc -s --template ./storytemplate.html ./english_text.md -o ktthomas.html
+        pandoc -s --template ./template.html ./english_text.md -o ktthomas.html && cp ktthomas.html /mnt/data/philip/git/word-of-life/ktt/
         -->
         <hr>
 		<div style="height:100px;"></div>
