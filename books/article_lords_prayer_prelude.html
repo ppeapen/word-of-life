@@ -41,10 +41,10 @@ Study,Scriptures,Prayer, Gospel" />
             <input type="checkbox" id="toggle" />
             <label for="toggle"></label>
           </div>
-          <script type="text/javascript" src="../assets/js/toggleDarkMode.js"></script> 
       </div>
-    ﻿ <h1 class="title">കർത്തൃപ്രാർത്ഥനയ്‍ക്ക്  ഒരു ആമുഖം</h1>
     </header>
+    <div style="height:50px"></div>
+    <h1 class="title">കർത്തൃപ്രാർത്ഥനയ്‍ക്ക്  ഒരു ആമുഖം</h1>
     <p class="subtitle noindent" style="margin-top:-20px"><span class="eng">(A Prelude to the Lord’s Prayer)</span></p>
     <p class="subtitle noindent"><span class="eng">Alex M. Kuruvilla</span></p>
 		<h2>പ്രാർത്ഥിക്കുന്ന  പ്രവൃത്തി</h2>
@@ -151,12 +151,26 @@ Study,Scriptures,Prayer, Gospel" />
         </table>
         <div style="height:30px"></div>
 			  <p>	'നിങ്ങൾ ഇവ്വണ്ണം പ്രാർഥിപ്പിൻ' അല്ലെങ്കിൽ 'നിങ്ങൾ പ്രാർഥിക്കുമ്പോൾ ഇതു  ചൊല്ലുവീൻ'  എന്നുള്ള കർത്താവിൻ്റെ ഉപദേശം ഒരു അഭിപ്രായമോ നിർദ്ദേശമോ അല്ല.  യേശു കർത്താവിൻ്റെ മറ്റുള്ള കല്പനകളെപോലെ പ്രാധാന്യം അർഹിക്കുന്ന ഒരു കല്പനയാണിത്.  അതുകൊണ്ട്, കർത്താവിൻ്റെ ഈ കല്‌പന അനുസരിക്കാൻ തൻ്റെ സഭ (ദൈവമക്കൾ) കടപ്പെട്ടിരിക്കുന്നു.  'ഞാൻ നിങ്ങളോടു കല്പിച്ചത്  ഒക്കെയും അനുസരിക്കേണ്ടതിനായി ഉപദേശിക്കുകയും ചെയ്യുവിൻ' എന്ന മഹാദൗത്യം (മത്തായി 28:20) ഏറ്റെടുത്തിട്ടുള്ള ഏതൊരു ദൈവദാസൻ്റെയും പ്രാഥമികമായ കടപ്പാടാണ്  തൻ്റെ ചുമതയിലുള്ള ജനത്തെ ഈ പ്രാർത്ഥന പഠിപ്പിക്കുക എന്നുള്ളത്.</p>
-        <hr/>
-    <footer>
-    <a href="../index.html"><img style="margin:10px auto 10px auto; width:100px; height:auto;" src="../assets/img/logo-s.webp" loading="lazy" alt="Home" /></a>
+    <footer style="margin-top:80px">
+    <p class="caption noindent">⮐ <a href="../index.html" title="Return to Home Page" style="text-decoration:none;"
+        >More articles and eBooks</a>
+    </p>
+    <div style="border-top:2px solid black; margin-top:60px; margin-bottom:50px"></div>
     <p class="noindent centered lato"><span style="font-size:1.1rem; font-weight:700">THE WORD OF LIFE MINISTRIES</span><br/>
-    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 01 June 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
+    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 6 July 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
     </footer>
-    <div style="height:100px" ></div>
+    <script>
+    <!--TOGGLE SWITCH-->
+    const toggle = document.getElementById('toggle');
+    const body = document.body;
+    toggle.addEventListener('input', (e) => {
+      const isChecked = e.target.checked;
+        if(isChecked) {
+          body.classList.add('dark-theme');
+        } else {
+          body.classList.remove('dark-theme');
+          }
+      });
+    </script>
   </body>
 </html>

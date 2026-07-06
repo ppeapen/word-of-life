@@ -39,11 +39,10 @@
             <input type="checkbox" id="toggle" />
             <label for="toggle"></label>
           </div>
-          <script type="text/javascript" src="../assets/js/toggleDarkMode.js"></script> 
       </div>
-    ﻿  ﻿<h1 class="title">﻿ആരോടു പ്രാർത്ഥിക്കരുത്</h1>
-    </header>
-   
+      </header>
+      <div style="height:50px"></div>
+    <h1 class="title">ആരോടു പ്രാർത്ഥിക്കരുത്</h1>
     <p class="subtitle noindent">യേശു കർത്താവിൻ്റെ പഠിപ്പിക്കൽ</p>
    <p class="subtitle noindent"><span class="eng">Alex M. Kuruvilla</span></p>
     </header>  
@@ -60,11 +59,26 @@
 			  <p>ആധികാരികതയുള്ളവനായ ദൈവപുത്രനായ യേശുക്രിസ്‌തു വളരെ സ്‌പഷ്ടമായി ഉറപ്പിച്ച്  ഇപ്രകാരം പറഞ്ഞു: ‘ഞാൻ തന്നെ വഴിയും സത്യവും ജീവനും ആകുന്നു; ഞാൻ മുഖാന്തരമല്ലാതെ ആരും പിതാവിൻ്റെ അടുക്കൽ എത്തുന്നില്ല’ (യോഹന്നാൻ 14:6).  ജീവിക്കുന്ന സത്യ ഏക ദൈവമായ യഹോവയിങ്കേലേക്കുള്ള, അതായത്  പിതാവാം ദൈവത്തിലേ ക്കുള്ള, ഏക വഴി അല്ലെങ്കിൽ ഏക മധ്യസ്ഥൻ കർത്താവായ യേശുക്രിസ്‌തു മാത്രമാകുന്നു എന്നാണ്  ആ പ്രസ്താവനയുടെ അർത്ഥം.  അത്  നിഷേധിക്കാൻ ആർക്കെങ്കിലും കഴിയുമോ?  എന്നാൽ, അന്യ നാമങ്ങളെ (മധ്യസ്ഥരെ) വിളി ച്ചപേക്ഷിക്കുന്നവർ കർത്താവിൻ്റെ ഈ അരുളപ്പാടിനെ നിഷേധിക്കു കയാണ്.  താത്ത്വികമായി അവർ ഏകദൈവ വിശ്വാസികൾ അല്ലവേ അല്ല.</p>
 				<p>പിതാവാം ദൈവത്തെ സമീപിക്കാൻ അവിടുന്ന്  നിയോഗിച്ചിട്ടില്ലാത്ത മറ്റ്  മധ്യസ്ഥരെ ആശ്രയിക്കുന്നവൻ ദൈവസ്നേഹം അറിഞ്ഞിട്ടില്ല.  അന്യനാമങ്ങളെ വിളിച്ചപേക്ഷിക്കുന്ന പ്രിയ സഹോദരാ സഹോദരീ, ദൈവസ്നേഹത്തിൽനിന്നും നിന്നെ അകറ്റി ദൈവത്തിനു നിന്നെ ശത്രു ആക്കാൻ പിശാച്  ഒരുക്കിയ കെണിയാണ്  സഹായത്തിനുവേണ്ടി അന്യനാമങ്ങളെ വിളിച്ചപേക്ഷിക്കുന്ന ഈ പ്രക്രിയ എന്നറിയുക.</p>
 				
-        <hr/>
-    <footer>
+    <footer style="margin-top:80px">
+    <p class="caption noindent">⮐ <a href="../index.html" title="Return to Home Page" style="text-decoration:none;"
+        >More articles and eBooks</a>
+    </p>
+    <div style="border-top:2px solid black; margin-top:60px; margin-bottom:50px"></div>
     <p class="noindent centered lato"><span style="font-size:1.1rem; font-weight:700">THE WORD OF LIFE MINISTRIES</span><br/>
-    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 10 June 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
+    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 6 July 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
     </footer>
-    <div style="height:100px" ></div>
+    <script>
+    <!--TOGGLE SWITCH-->
+    const toggle = document.getElementById('toggle');
+    const body = document.body;
+    toggle.addEventListener('input', (e) => {
+      const isChecked = e.target.checked;
+        if(isChecked) {
+          body.classList.add('dark-theme');
+        } else {
+          body.classList.remove('dark-theme');
+          }
+      });
+    </script>
   </body>
 </html>

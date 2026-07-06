@@ -39,10 +39,10 @@
             <input type="checkbox" id="toggle" />
             <label for="toggle"></label>
           </div>
-          <script type="text/javascript" src="../assets/js/toggleDarkMode.js"></script> 
       </div>
-    ﻿  ﻿<h1 class="title">﻿മാറ്റമില്ലാത്തവൻ</h1>
     </header>
+    <div style="height:50px"></div>
+    <h1 class="title">﻿മാറ്റമില്ലാത്തവൻ</h1>
     <p class="subtitle noindent">മാറി മറിഞ്ഞുകൊണ്ടിക്കുന്ന പ്രപഞ്ചം</p>
    <p class="subtitle noindent"><span class="eng">Alex M. Kuruvilla</span></p>
     </header>  
@@ -65,11 +65,26 @@
     <p class="quotation">‘ഹോവേ, നിൻ്റെ വചനം സ്വർഗത്തിൽ എന്നേക്കും സ്ഥിരമായിരിക്കുന്നു’ (സങ്കീർത്തനങ്ങൾ 119:89).   </p>
     <p>യേശു പറഞ്ഞു: ‘ആകാശവും ഭൂമിയും ഒഴിഞ്ഞുപോകും; എൻ്റെ വചനങ്ങളോ ഒഴിഞ്ഞു പോകയില്ല’ (മത്തായി 24:35).</p>
     <p>ദൈവപുത്രനായ യേശുക്രിസ്‌തു ദൈവമാകുന്നു.  അവിടുന്ന്  അനന്യൻ അഥവാ മാറ്റമില്ലാത്തവൻ തന്നെയാണ്.  ദൈവവചനം ആ സത്യത്തെ ഇപ്രകാരം സാക്ഷിക്കുന്നു: ‘യേശുക്രിസ്തു ഇന്നലെയും ഇന്നും എന്നെന്നേക്കും അനന്യൻ തന്നെ’ (എബ്രായർ 13:8).</p>
-    <hr/>
-    <footer>
+    <footer style="margin-top:80px">
+    <p class="caption noindent">⮐ <a href="../index.html" title="Return to Home Page" style="text-decoration:none;"
+        >More articles and eBooks</a>
+    </p>
+    <div style="border-top:2px solid black; margin-top:60px; margin-bottom:50px"></div>
     <p class="noindent centered lato"><span style="font-size:1.1rem; font-weight:700">THE WORD OF LIFE MINISTRIES</span><br/>
-    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 10 June 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
+    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 6 July 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
     </footer>
-    <div style="height:100px" ></div>
+    <script>
+    <!--TOGGLE SWITCH-->
+    const toggle = document.getElementById('toggle');
+    const body = document.body;
+    toggle.addEventListener('input', (e) => {
+      const isChecked = e.target.checked;
+        if(isChecked) {
+          body.classList.add('dark-theme');
+        } else {
+          body.classList.remove('dark-theme');
+          }
+      });
+    </script>
   </body>
 </html>

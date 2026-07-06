@@ -39,12 +39,11 @@
             <input type="checkbox" id="toggle" />
             <label for="toggle"></label>
           </div>
-          <script type="text/javascript" src="../assets/js/toggleDarkMode.js"></script> 
       </div>
-      <h1 class="nodisplay">﻿A Prayer Of Repentance</h1>
-    ﻿  ﻿<p class="title">﻿A Prayer Of Repentance</p>
     </header>
-   
+    <div style="height:50px"></div>
+      <h1 class="nodisplay">A Prayer Of Repentance</h1>
+      <p class="title">A Prayer Of Repentance</p>
     <p class="subtitle noindent">With A Contrite Heart</p>
    <p class="author noindent"><span class="eng">Alex M. Kuruvilla</span></p>
     </header>  
@@ -60,13 +59,27 @@
     <p>Abba Father, I ask that the blood Jesus shed on the cross be counted as the ransom paid for my life. Save me from the judgment that is to come. Cover me with the righteousness of Your Son. Because of Jesus’ sacrifice, please forgive my sins and be at peace with me. Let Your face shine upon me.</p>
     <p>Create in me a clean heart, O God, and renew a right spirit within me. Do not cast me away from Your presence. Restore to me the joy of Your salvation and make me willing to obey You.</p>
     <p>I offer this prayer in the name of Jesus Christ, my Lord and Savior.  Amen.</p>
-    <p></p>
-    <p></p>
-    <hr/>
-    <footer>
+
+    <footer style="margin-top:80px">
+    <p class="caption noindent">⮐ <a href="../index.html" title="Return to Home Page" style="text-decoration:none;"
+        >More articles and eBooks</a>
+    </p>
+    <div style="border-top:2px solid black; margin-top:60px; margin-bottom:50px"></div>
     <p class="noindent centered lato"><span style="font-size:1.1rem; font-weight:700">THE WORD OF LIFE MINISTRIES</span><br/>
-    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 10 June 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
+    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 6 July 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
     </footer>
-    <div style="height:100px" ></div>
+    <script>
+    <!--TOGGLE SWITCH-->
+    const toggle = document.getElementById('toggle');
+    const body = document.body;
+    toggle.addEventListener('input', (e) => {
+      const isChecked = e.target.checked;
+        if(isChecked) {
+          body.classList.add('dark-theme');
+        } else {
+          body.classList.remove('dark-theme');
+          }
+      });
+    </script>
   </body>
 </html>

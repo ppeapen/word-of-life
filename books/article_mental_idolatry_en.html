@@ -39,13 +39,12 @@
             <input type="checkbox" id="toggle" />
             <label for="toggle"></label>
           </div>
-          <script type="text/javascript" src="../assets/js/toggleDarkMode.js"></script> 
       </div>
-      <h1 class="nodisplay">﻿﻿What Is Mental Idolatry?</h1>
-    ﻿  ﻿<p class="title">﻿﻿What Is Mental Idolatry?</p>
     </header>
-   
-    <!--<p class="subtitle noindent">With A Contrite Heart</p>-->
+    <div style="height:50px"></div>
+      <h1 class="nodisplay">What Is Mental Idolatry?</h1>
+      <p class="title">What Is Mental Idolatry?</p>
+    
    <p class="author noindent"><span class="eng">Alex M. Kuruvilla</span></p>
     </header>  
     <div style="height:20px"></div>
@@ -73,11 +72,27 @@
     <p>Consider the crucifix. What does it communicate? Does it proclaim the risen and glorified Lord? Or does it present Christ as still hanging on the cross? Instead of revealing the full truth, it risks directing attention to a partial and misleading representation. In this way, it can obscure as much as it reveals.</p>
     <p>So, what is mental idolatry?  Mental idolatry occurs when such images—whether seen externally or formed internally—are brought into the mind and used as aids in worship or prayer. When we rely on imagined pictures to approach God, we are engaging in a subtle yet serious form of idolatry. Some even recall cinematic portrayals, such as scenes from The Passion, to visualize Christ during worship or the Lord’s Supper. But this, too, is a construct of human imagination.  Mental idolatry is not harmless—it is the inward counterpart of physical idolatry. Both arise from the same root: a failure to worship God as He truly is, and a tendency to reshape Him according to human perception.</p>
     <p>Therefore, the command remains urgent and uncompromising: flee from idolatry—in every form, whether outward or inward, visible or invisible.</p>
-    <hr/>
-    <footer>
+
+    <footer style="margin-top:80px">
+    <p class="caption noindent">⮐ <a href="../index.html" title="Return to Home Page" style="text-decoration:none;"
+        >More articles and eBooks</a>
+    </p>
+    <div style="border-top:2px solid black; margin-top:60px; margin-bottom:50px"></div>
     <p class="noindent centered lato"><span style="font-size:1.1rem; font-weight:700">THE WORD OF LIFE MINISTRIES</span><br/>
-    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 10 June 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
+    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 6 July 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
     </footer>
-    <div style="height:100px" ></div>
+    <script>
+    <!--TOGGLE SWITCH-->
+    const toggle = document.getElementById('toggle');
+    const body = document.body;
+    toggle.addEventListener('input', (e) => {
+      const isChecked = e.target.checked;
+        if(isChecked) {
+          body.classList.add('dark-theme');
+        } else {
+          body.classList.remove('dark-theme');
+          }
+      });
+    </script>
   </body>
 </html>
