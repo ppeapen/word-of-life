@@ -101,6 +101,7 @@ body {
     font-weight: 700;
     /*font-stretch: 90%;*/
     line-height: 1.2;
+    text-indent: 0;
 }
 .subtitle {
     font-family: "EB Garamond", serif;

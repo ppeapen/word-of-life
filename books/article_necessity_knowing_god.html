@@ -38,16 +38,12 @@
           <a href="../index.html"><img class="logo" src="../assets/img/logo-s.webp" loading="lazy" alt="Home" z-order="99" /></a>
             <input type="checkbox" id="toggle" />
             <label for="toggle"></label>
-          </div>
-          <script type="text/javascript" src="../assets/js/toggleDarkMode.js"></script> 
+          </div>           
       </div>
-      <div style="height:20px"></div>
-      <h1 class="nodisplay">The Necessity of Knowing God</h1>
+    </header> 
+    <h1 class="nodisplay">The Necessity of Knowing God</h1>
     <p class="title">The Necessity of Knowing God</p>
-    </header>
-   <p class="author noindent"><span class="eng">Alex M. Kuruvilla</span></p>
-    </header>  
-
+    <p class="author noindent"><span class="eng">Alex M. Kuruvilla</span></p>
         <p>
         God desires His people to know Him intimately and personally because He is a personal and
         relational God. Rather than remaining distant from humanity, He enters into a covenant
@@ -110,7 +106,7 @@
             refuge in him!</em> (Psalm 34:8).</p>
 
         <p class="quotation">
-            <em>’ For thus says the Lord to the house of Israel:
+            <em>‘For thus says the Lord to the house of Israel:
             “<strong>Seek me and live;</strong>”</em> (Amos 5:4). 
 
         <p>Seeking involves knowing God intimately and personally.
@@ -595,11 +591,27 @@
         earliest times spoke of him, and our Lord Jesus Christ himself taught us, and the creed of
         the fathers has handed down to us.”
         </p>
-        <hr/>
-    <footer>
+
+    <footer style="margin-top:80px">
+    <p class="caption noindent">⮐ <a href="../index.html" title="Return to Home Page" style="text-decoration:none;"
+        >More articles and eBooks</a>
+    </p>
+    <div style="border-top:2px solid black; margin-top:60px; margin-bottom:50px"></div>
     <p class="noindent centered lato"><span style="font-size:1.1rem; font-weight:700">THE WORD OF LIFE MINISTRIES</span><br/>
-    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 10 June 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
+    Email: <a href="mailto:alexm.kuruvilla@gmail.com" >alexm.kuruvilla@gmail.com</a><br/>Mobile: <a href="tel:+91 9633280848">+91 9633280848</a><br/>Date: 6 July 2026<br/><br/>Website maintained by <a href="https://philipeapen.com/contact/" >Refineria</a></p>
     </footer>
-    <div style="height:100px" ></div>
+    <script>
+    <!--TOGGLE SWITCH-->
+    const toggle = document.getElementById('toggle');
+    const body = document.body;
+    toggle.addEventListener('input', (e) => {
+      const isChecked = e.target.checked;
+        if(isChecked) {
+          body.classList.add('dark-theme');
+        } else {
+          body.classList.remove('dark-theme');
+          }
+      });
+    </script>
     </body>
 </html>
