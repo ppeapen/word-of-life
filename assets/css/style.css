@@ -426,6 +426,10 @@ blockquote p {
     padding-right: 1.13rem;
     text-indent: 0rem;
 }
+.nested-indent {
+  display: inline-block; /* Required to let margins/padding push text properly */
+  padding-left: 25px;    /* Adds 30px on top of the original 40px */
+}
 figcaption {
     font-size: 1rem;
     text-align: center;
@@ -466,7 +470,7 @@ figcaption {
     margin-bottom: 0.7em;
     text-align: right;
 }
-.hangingindent {
+.hangingindent, .hangingindent p {
     padding-left: 2rem;
     text-indent: -2rem;
 }
