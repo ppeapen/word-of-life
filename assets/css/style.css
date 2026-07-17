@@ -126,10 +126,11 @@ h6 {
     font-optical-sizing: auto;
     line-height: 1.1;
 }
-h2,
-h3 {
+h2
+{
     font-weight: 400;
 }
+h3,
 h4,
 h5,
 h6 {
@@ -313,7 +314,7 @@ h2 {
     margin: var(--heading-margins-h2);
 }
 h3 {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     line-height: 1.4;
     text-align: left;
     margin: 1.5rem 0rem 0.5rem 0rem;
