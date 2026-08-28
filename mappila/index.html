@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mappila Malayalam Version | Corpus Christi</title>
-    <!-- Import usfm-js from a CDN -->
-    <script src="https://jsdelivr.net"></script>
     <style>
         @import url('https://smc.org.in/fonts/malini.css');
         body {
@@ -31,55 +29,64 @@
     <div id="bible-content"></div>
 
     <script>
-        // 1. Path to your USFM file in the same GitHub Pages repository
+    <!-- Notice type="module" which allows direct modern JS imports -->
+    <script type="module">
+        // 1. Correctly import the package using a modern ESM CDN
+        import usfmjs from 'https://esm.run';
+
+        // 2. Change this to match your file name (e.g., '.sfm' or '.usfm')
         const usfmFilePath = './43lukmmc.sfm'; 
 
         async function loadAndRenderUSFM() {
             try {
-                // 2. Fetch the raw USFM text file
+                // Fetch the raw text file
                 const response = await fetch(usfmFilePath);
-                if (!response.ok) throw new Error(`Failed to fetch USFM file: ${response.statusText}`);
+                if (!response.ok) throw new Error(`Failed to fetch file (${response.status} ${response.statusText}). Check if file name matches exactly.`);
                 const usfmText = await response.text();
 
-                // 3. Parse USFM into a JavaScript Object using usfm-js
-                // Note: The global variable is 'usfmjs' when loaded via UMD script tag
+                // Parse USFM into a structured JSON object
                 const parsedBible = usfmjs.toJSON(usfmText);
-
-                // 4. Generate HTML from the parsed object
+                
                 let htmlOutput = '';
-                const chapters = parsedBible.chapters;
+                const chapters = parsedBible.chapters || {};
 
+                // Loop through chapters sequentially
                 for (const chapterNum in chapters) {
                     htmlOutput += `<h2 class="chapter-title">Chapter ${chapterNum}</h2><p>`;
                     
                     const verses = chapters[chapterNum];
                     for (const verseNum in verses) {
-                        // Skip metadata keys like front matter or headers if they pop up
-                        if (isNaN(verseNum)) continue; 
+                        // Filter out metadata and front-matter keys
+                        if (isNaN(parseInt(verseNum))) continue; 
 
                         const verseData = verses[verseNum];
-                        // Extract text from verse objects
-                        const verseText = verseData.verseObjects
-                            .map(obj => obj.text || '')
-                            .join('');
+                        let verseText = '';
+
+                        // Safeguard: usfm-js stores text objects inside verseObjects array
+                        if (verseData && Array.isArray(verseData.verseObjects)) {
+                            verseText = verseData.verseObjects
+                                .map(obj => obj.text || '')
+                                .join('');
+                        }
 
                         htmlOutput += `<span class="verse"><sup class="verse-num">${verseNum}</sup>${verseText}</span> `;
                     }
                     htmlOutput += `</p>`;
                 }
 
-                // 5. Inject into the DOM and hide loading message
+                // Inject markup and clear loader
                 document.getElementById('bible-content').innerHTML = htmlOutput;
                 document.getElementById('loading').style.display = 'none';
 
             } catch (err) {
                 document.getElementById('loading').style.display = 'none';
-                document.getElementById('error').innerText = `Error: ${err.message}`;
+                const errorDiv = document.getElementById('error');
+                errorDiv.innerText = `Error: ${err.message}`;
+                errorDiv.style.display = 'block';
                 console.error(err);
             }
         }
 
-        // Run the function when the page loads
         window.onload = loadAndRenderUSFM;
     </script>
 </body>
