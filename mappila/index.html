@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mappila Malayalam Version | Corpus Christi</title>
+    <!-- Import usfm-js from a CDN -->
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        @import url('https://smc.org.in/fonts/malini.css');
+        body {
+            font-family: "Malini", sans-serif;  
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #333;
+        }
+        .eng {font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;}
+        .chapter-title { font-size: 2em; color: #111; margin-top: 30px; }
+        .verse { margin-bottom: 8px; display: inline; }
+        .verse-num { font-size: 0.8em; font-weight: bold; color: #888; vertical-align: super; margin-left: 6px; margin-right: 2px; }
+        #error { color: red; font-weight: bold; }
+        #loading { color: #666; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <div id="loading">Loading and rendering scripture...</div>
+    <div id="error"></div>
+    <div id="bible-content"></div>
+
+    <script>
+        // 1. Path to your USFM file in the same GitHub Pages repository
+        const usfmFilePath = './43lukmmc.sfm'; 
+
+        async function loadAndRenderUSFM() {
+            try {
+                // 2. Fetch the raw USFM text file
+                const response = await fetch(usfmFilePath);
+                if (!response.ok) throw new Error(`Failed to fetch USFM file: ${response.statusText}`);
+                const usfmText = await response.text();
+
+                // 3. Parse USFM into a JavaScript Object using usfm-js
+                // Note: The global variable is 'usfmjs' when loaded via UMD script tag
+                const parsedBible = usfmjs.toJSON(usfmText);
+
+                // 4. Generate HTML from the parsed object
+                let htmlOutput = '';
+                const chapters = parsedBible.chapters;
+
+                for (const chapterNum in chapters) {
+                    htmlOutput += `<h2 class="chapter-title">Chapter ${chapterNum}</h2><p>`;
+                    
+                    const verses = chapters[chapterNum];
+                    for (const verseNum in verses) {
+                        // Skip metadata keys like front matter or headers if they pop up
+                        if (isNaN(verseNum)) continue; 
+
+                        const verseData = verses[verseNum];
+                        // Extract text from verse objects
+                        const verseText = verseData.verseObjects
+                            .map(obj => obj.text || '')
+                            .join('');
+
+                        htmlOutput += `<span class="verse"><sup class="verse-num">${verseNum}</sup>${verseText}</span> `;
+                    }
+                    htmlOutput += `</p>`;
+                }
+
+                // 5. Inject into the DOM and hide loading message
+                document.getElementById('bible-content').innerHTML = htmlOutput;
+                document.getElementById('loading').style.display = 'none';
+
+            } catch (err) {
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').innerText = `Error: ${err.message}`;
+                console.error(err);
+            }
+        }
+
+        // Run the function when the page loads
+        window.onload = loadAndRenderUSFM;
+    </script>
+</body>
+</html>
+<!--
+How to use this in GitHub Pages
+
+Save this file as index.html in your repository.
+Add your USFM file (e.g., GEN.usfm) to the exact same folder.
+Update the variable const usfmFilePath = './GEN.usfm'; in the script if your file has a different name or path.
+Push to GitHub and enable GitHub Pages in your repository settings.
+
+If you plan to scale this project up, let me know if you would like to:
+Add a dropdown menu to swap between different book files.
+Parse and display USFM footnotes and cross-references (which require deeper object nesting).
+Implement a CSS framework like Tailwind to make it look modern and mobile-responsive.
+-->
